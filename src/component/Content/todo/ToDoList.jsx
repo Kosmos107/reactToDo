@@ -4,12 +4,12 @@ import s from "./ToDo.module.scss"
 
 function ToDoList(props){
     return(
-        <div className={s.wrapper} >
+        <label className={s.wrapper} >
             <p className={s.text}>
                 snfjhfjsdhfsdjfsidnhfesifnhisdjfafnaslkdvnoi
             </p>
-            <input type="radio" />
-        </div>
+            <input type="checkbox" />
+        </label>
     )
 }
 export default ToDoList

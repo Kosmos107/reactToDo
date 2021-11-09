@@ -7,8 +7,13 @@ class ToDo extends React.Component{
     render(){
         return(
     <>
+    <div className={s.wrapperOrigin}>
         <ToDoList/>
-        <input className={s.textTodo} />
+    </div>
+        <input className={s.textToDo} />
+        <button className={s.ToDoButtons} >
+            add
+        </button>
     </>
         )}
 }

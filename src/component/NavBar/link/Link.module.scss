@@ -1,0 +1,21 @@
+.wrapper{
+    list-style: none;
+    
+}
+.link{
+    
+    padding: 15px 30px;
+    background-color: crimson;
+    text-align: center;
+    text-decoration: none;
+    color: cyan;
+    font-size: 18px;
+    border-radius: 50%;
+    transition: all .9s ease;
+    cursor: pointer;
+}
+.wrapper:active .link {
+    background-color: cyan;
+    color: crimson;
+    
+}

@@ -1,0 +1,22 @@
+.content{
+    background-color: aqua;
+    padding: 2px 15px 0;
+    width: 1000px;
+    min-height: 80vh;
+    margin: 0 auto;
+    
+}
+.info{
+    display: block;
+    padding: 10px 15px 10px 5px;
+    margin: 40px auto 0;
+    font-size: 18px;
+}
+.load{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background-color: dodgerblue;
+}

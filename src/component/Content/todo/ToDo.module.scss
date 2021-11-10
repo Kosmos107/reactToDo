@@ -2,31 +2,34 @@
     display: flex;
     width: 70%;
     margin: 0 auto 20px;
-    padding: 15px 5px;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    border: 2px solid #899cd4;
-    border-radius: 20px;
-    background-color: rgba(26, 52, 133, 0.3);
+    
+    
+
 }
 .wrapperOrigin{
-    max-width: 80%;
+    max-width: 100%;
     overflow-y:auto ;
-    margin: 40px auto;
-    border: 1px solid yellow;
-    min-height: 300px;
-    max-height: 300px;
+    margin: 30px auto;
+    // border: 1px solid yellow;
+    min-height: 290px;
+    max-height: 290px;
     border-radius:20px ;
 }
 .text{
-    width: 80%;
-    padding:10px ;
+    width: 90%;
+    padding:15px 10px ;
     font-size: 20px;
     overflow-x: hidden;
+    text-align: center;
     text-transform: uppercase;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #414d75;
-
+    border: 2px solid #899cd4;
+    background-color: rgba(26, 52, 133, 0.3);
+    border-radius:20px ;
+    min-height: 20px;
 }
 .textToDo{
     display: block;
@@ -36,15 +39,23 @@
     font-size: 19px;
     border: 1px solid #899cd4;
     outline:none;
-    margin: 5% auto;
+    margin: 0 auto;
     overflow-x: hidden;
-
+    
 }
 .ToDoButtons{
-    padding: 20px 30px;
+    padding: 20px 60px;
     max-width: 15%;
     display: block;
-    margin: 0 auto 5%;
+    margin: 3% auto;
     text-align: center;
     overflow: hidden;
+}
+.ListInput{
+    display: none;
+}
+.ListInput:checked ~.text {
+   text-decoration: line-through ;
+   background-color: rgba(26, 52, 133, 0.8);
+   color:#899cd4;
 }

@@ -6,10 +6,37 @@ import ToDo from "./todo/ToDo"
 class Content extends React.Component {
     constructor(props){
         super()
-        this.state = {number:25}
+        this.state = {number:25,text:[],newText:"150"}
         this.hander = this.hander.bind(this)
         this.ShowNow = this.ShowNow.bind(this)
         this.load = this.load.bind(this)
+        this.addTextToDo=this.addTextToDo.bind(this)
+        this.addNewText=this.addNewText.bind(this)
+    }
+    addTextToDo(){
+        console.log(this.state)
+        let newtext = this.state.newText
+        let arr =this.state.text
+        let newArr= [...arr]
+        
+        if(newtext){
+            newArr.push({text:newtext})
+            console.log(this.state)
+            this.setState((state)=>{
+                console.log("newtext",newtext)
+                return(
+                    state.text=newArr,
+                    state.newText="" 
+                )
+            })
+        }else(console.log("напиши текст"))
+       
+    }
+    addNewText(e){
+        this.setState({newText:e.target.value})
+        console.log(this.state)
+        console.log(this.state.text)
+        
     }
     hander(event){
         this.setState({number:event.target.value})
@@ -37,7 +64,11 @@ class Content extends React.Component {
              case "ToDo":
                 return(
                 <div className={S.content}>
-                    <ToDo />
+                    <ToDo 
+                    info={this.state.text}
+                    funcNew={this.addNewText}
+                    funcText={this.addTextToDo}
+                    />
                 </div>
                 )
                 default:

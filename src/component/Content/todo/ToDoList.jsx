@@ -3,12 +3,14 @@ import s from "./ToDo.module.scss"
 
 
 function ToDoList(props){
+    
     return(
         <label className={s.wrapper} >
+            <input className={s.ListInput}  type="checkbox" />
             <p className={s.text}>
-                snfjhfjsdhfsdjfsidnhfesifnhisdjfafnaslkdvnoi
+                {props.text}
             </p>
-            <input type="checkbox" />
+            
         </label>
     )
 }

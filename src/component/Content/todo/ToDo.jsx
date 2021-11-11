@@ -3,18 +3,20 @@ import s from "./ToDo.module.scss"
 import ToDoList from "./ToDoList"
 const ToDo=(props)=>{
     console.log(props.info)
-    console.log(props.info)
+    let[text,newText]= props.info 
+    let [addText,addNewText,key]=props.func
+    
+    console.log(props.func)
         return(
         <>
             <div className={s.wrapperOrigin}>
-                {props.info.map((arr,num)=>{
+                {text.map((arr,num)=>{
                 console.log(arr,num)
-                debugger
-                return <ToDoList text={arr} key={num} />
+                return <ToDoList newInfo={arr} key={num} />
                 })}
             </div>
-            <input onChange={props.funcNew} value={props.newText} className={s.textToDo} />
-            <button onClick={props.funcText} className={s.ToDoButtons} >
+            <input onKeyDown={key} onChange={addNewText} value={newText} className={s.textToDo} />
+            <button onClick={addText} className={s.ToDoButtons} >
                 add
             </button>
         </>

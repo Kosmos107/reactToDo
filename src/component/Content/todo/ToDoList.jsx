@@ -8,7 +8,7 @@ function ToDoList(props){
         <label className={s.wrapper} >
             <input className={s.ListInput}  type="checkbox" />
             <p className={s.text}>
-                {props.text}
+                {props.newInfo.text}
             </p>
             
         </label>

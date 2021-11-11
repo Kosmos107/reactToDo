@@ -13,6 +13,12 @@ class Content extends React.Component {
         this.addTextToDo=this.addTextToDo.bind(this)
         this.addNewText=this.addNewText.bind(this)
     }
+
+    key = (e)=>{
+        if(e.keyCode===13){
+            this.addTextToDo()
+        }
+    }
     addTextToDo(){
         console.log(this.state)
         let newtext = this.state.newText
@@ -65,9 +71,8 @@ class Content extends React.Component {
                 return(
                 <div className={S.content}>
                     <ToDo 
-                    info={this.state.text}
-                    funcNew={this.addNewText}
-                    funcText={this.addTextToDo}
+                    info={[this.state.text,this.state.newText]}
+                    func={[this.addTextToDo,this.addNewText,this.key]}
                     />
                 </div>
                 )

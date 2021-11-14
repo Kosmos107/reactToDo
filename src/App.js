@@ -3,6 +3,7 @@ import NavBar from "./component/NavBar/Navbar";
 import Content from "./component/Content/Content";
 import Footer from "./component/Footer/Footer";
 
+
 // https://ohshitgit.com/ru если есть проблема с гитом
 
 class App extends React.Component {
@@ -11,12 +12,14 @@ class App extends React.Component {
       this.state = {show:"work"}
       this.change = this.change.bind(this)
   }
-//"ЛОЧ"
+
     change(e){
       this.setState({show:e.target.outerText})
       console.log(e.target.outerText)
+    
     }
   render(){
+    
     return(
       <div className="wrapper">
         <NavBar change={this.change} />

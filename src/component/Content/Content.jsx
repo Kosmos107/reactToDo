@@ -2,13 +2,13 @@ import React from "react"
 import S from "./Content.module.scss"
 import Work from "./work/Work"
 import ToDo from "./todo/ToDo"
+import {Routes,Route} from "react-router-dom"
 
 class Content extends React.Component {
     constructor(props){
         super()
-        this.state = {number:25,text:[],newText:"150"}
+        this.state = {number:25,text:[],newText:""}
         this.hander = this.hander.bind(this)
-        this.ShowNow = this.ShowNow.bind(this)
         this.load = this.load.bind(this)
         this.addTextToDo=this.addTextToDo.bind(this)
         this.addNewText=this.addNewText.bind(this)
@@ -55,40 +55,19 @@ class Content extends React.Component {
             )
         }
     }
-    ShowNow(x){
-        this.load(true)
-        
-        
-        switch(x){
-            case "Work":
-                return(
-                <div className={S.content}>
-                    <Work number={this.state.number}/>
-                     <input className={S.info} value={this.state.number} onChange={this.hander} />
-                </div>
-                )
-             case "ToDo":
-                return(
-                <div className={S.content}>
-                    <ToDo 
-                    info={[this.state.text,this.state.newText]}
-                    func={[this.addTextToDo,this.addNewText,this.key]}
-                    />
-                </div>
-                )
-                default:
-                return(
-                <div className={S.content}>
-                    
-                </div>
-                )
-    }}
     
     render(){
-        let Info = this.props.show
-        return(<>
-        {this.ShowNow(Info)}
-        </>)    
+        return(
+        <>
+            <div className={S.content}>
+                <Routes>
+                    <Route path="/ToDo" element={<ToDo func={[this.addNewText,this.key]} info={[this.state.text,this.state.newText]}  />} />
+                    <Route path="/Work" element={<Work/>} />
+                </Routes>
+            </div>
+        </>
+
+        )    
     }
 }
 

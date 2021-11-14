@@ -1,6 +1,7 @@
 import s from "./Navbar.module.scss"
-import Link from "./link/Link"
+import Linked from "./link/Link"
 import React from "react"
+
 
 
 class Navbar extends React.Component{
@@ -8,18 +9,15 @@ class Navbar extends React.Component{
         super()
     }
     render(){
-        let Links = massLink.map(mass=>(
-            <Link 
-            name={mass.name}
-            link={mass.lis}
-            key={mass.key}
-            func={this.props.change}
-            />
-        ))
         return(
             <div className={s.wrraper}>
                 <ul className={s.links }  >
-                    {Links}
+                    {massLinks.map(mass=>{
+                        return(
+                            <Linked name={mass.name} key={mass.id} />
+                            )
+                        }
+                    )}
                 </ul>
             </div>
            
@@ -27,19 +25,15 @@ class Navbar extends React.Component{
     }  
 }
  export default Navbar
- const massLink = [{
-    name:"ToDo",
-    lis:"#",
-    key:1
-    },
-    {name:"Work",
-    lis:"##",
-    key:2
-    },
-    {name:"Exit",
-    lis:"###",
-    key:3
-    }]
+ 
+ let massLinks=[
+     {
+         id:1,
+         name:"ToDo",
 
-   
-    
+     },
+     {
+         id:2,
+         name:"Work"
+     }
+ ]

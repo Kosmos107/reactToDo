@@ -7,9 +7,10 @@ function ToDoList(props){
     return(
         <label className={s.wrapper} >
             <input className={s.ListInput}  type="checkbox" />
-            <p className={s.text}>
-                {props.newInfo.text}
-            </p>
+            <div className={s.text}>
+                <span className={s.basic}>{props.newInfo.text}</span>
+                <small>{new Date().toLocaleDateString()}</small>
+            </div>
             
         </label>
     )

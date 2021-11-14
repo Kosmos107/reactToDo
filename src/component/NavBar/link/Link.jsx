@@ -1,11 +1,12 @@
 import s from "./Link.module.scss"
-const Link=(props)=>{
+import {Link} from "react-router-dom"
+const Linked=(props)=>{
     return(
         <li className={s.wrapper}>
-            <a href={props.lis} className={s.link} onClick={props.func} >
+            <Link to={props.name} className={s.link}  >
            {props.name} 
-            </a>
+            </Link>
         </li>
     )
 }
-export default Link
+export default Linked

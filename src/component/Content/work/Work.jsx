@@ -16,16 +16,16 @@ const Work=(props)=>{
             </div>
         )
     }
-    if(props.number<10){
+    if(props.number<30){
         return (
             <div className={s.wrapperNot}>
-                это число не подходи {props.number}
+                слишком мало {props.number}
             </div>
         )
     }
     return(
         <div className={s.wrapperYes}>
-            это число подходи {props.number}
+            ладно,пойдет {props.number}
         </div>
     )
 }

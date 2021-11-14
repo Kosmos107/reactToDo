@@ -4,7 +4,7 @@ import ToDoList from "./ToDoList"
 const ToDo=(props)=>{
     console.log(props.info)
     let[text,newText]= props.info 
-    let [addText,addNewText,key]=props.func
+    let [addNewText,key]=props.func
     
     console.log(props.func)
         return(
@@ -16,9 +16,6 @@ const ToDo=(props)=>{
                 })}
             </div>
             <input onKeyDown={key} onChange={addNewText} value={newText} className={s.textToDo} />
-            <button onClick={addText} className={s.ToDoButtons} >
-                add
-            </button>
         </>
         )
     }

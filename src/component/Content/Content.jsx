@@ -4,6 +4,9 @@ import Work from "./work/Work"
 import ToDo from "./todo/ToDo"
 import {Routes,Route} from "react-router-dom"
 
+
+//делаем редюсер
+
 class Content extends React.Component {
     constructor(props){
         super()

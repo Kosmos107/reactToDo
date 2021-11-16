@@ -1,4 +1,5 @@
 const handlers ={
+    [SHOW]
     DEFAULT:state=>{
         return state}
 }

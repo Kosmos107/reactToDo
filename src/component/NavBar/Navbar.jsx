@@ -35,5 +35,9 @@ class Navbar extends React.Component{
      {
          id:2,
          name:"Work"
-     }
+     },
+     {
+        id:3,
+        name:"Metro"
+    }
  ]

@@ -3,18 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import {BrowserRouter} from "react-router-dom"
-import { TodoState } from './context/todo/TodoState';
+// import { TodoState } from './context/todo/TodoState';
 
 
 
 ReactDOM.render(
   
     <React.StrictMode>
-      <TodoState>
+      {/* <TodoState> */}
        <BrowserRouter>
           <App />
         </BrowserRouter >
-      </TodoState>
+      {/* </TodoState> */}
     </React.StrictMode>,
   document.getElementById('root')
 );

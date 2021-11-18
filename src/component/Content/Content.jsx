@@ -2,6 +2,7 @@ import React from "react"
 import S from "./Content.module.scss"
 import Work from "./work/Work"
 import ToDo from "./todo/ToDo"
+import Metro from "./metro/Metro"
 import {Routes,Route} from "react-router-dom"
 
 
@@ -60,12 +61,27 @@ class Content extends React.Component {
     }
     
     render(){
+       const RenderProp= (data,bl)=>{
+            if(data.x>1300){
+                return (
+                    <div style={{background:bl.b2}}>Привет))</div> 
+                 )
+            }
+            return (
+                <div style={{background:bl.b1}}>{data.x}&nbsp;набери 1300</div>
+                   )
+        }
+        
         return(
         <>
             <div className={S.content}>
                 <Routes>
                     <Route path="/ToDo" element={<ToDo func={[this.addNewText,this.key]} info={[this.state.text,this.state.newText]}  />} />
                     <Route path="/Work" element={<Work/>} />
+                    <Route path="/Metro" element={
+                        // рендер пропс
+                    <Metro ren={RenderProp} />
+                    } />
                 </Routes>
             </div>
         </>

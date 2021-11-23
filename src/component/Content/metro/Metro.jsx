@@ -2,6 +2,7 @@ import s from "./Metro.module.scss"
 import React from "react"
 import Error from "../Error/Error"
 import Goal from "../Error/Goal"
+import Wrapper from "../wrapper/Wrapper"
 class Metro extends React.Component{
     constructor(props){
         super()
@@ -46,6 +47,7 @@ class Metro extends React.Component{
                 <button style={{width:"45px",height:"30px"}} onClick={this.addErr} >
                     вызвать ошибку
                 </button>
+                <Wrapper />
             </Error> 
         </div>   
     )

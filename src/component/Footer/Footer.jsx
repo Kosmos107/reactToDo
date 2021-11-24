@@ -1,9 +1,10 @@
 import S from "./Footer.module.scss"
-function Footer(){
-    console.log(S)
+import Like from "./Like"
+import store from "../../redux/store"
+function Footer(props){
     return(
         <div className={S.wrapper}>
-
+            <Like store={store}/>
         </div>
     )
 }

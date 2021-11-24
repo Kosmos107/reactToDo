@@ -2,7 +2,10 @@ import React from "react"
 import NavBar from "./component/NavBar/Navbar";
 import Content from "./component/Content/Content";
 import Footer from "./component/Footer/Footer";
+import {createStore} from "redux"
 
+
+console.log(createStore)
 
 // https://ohshitgit.com/ru если есть проблема с гитом
 
@@ -24,7 +27,7 @@ class App extends React.Component {
       <div className="wrapper">
         <NavBar change={this.change} />
         <Content show={this.state.show}/>
-        <Footer/>
+        <Footer />
      </div> 
     )
   }

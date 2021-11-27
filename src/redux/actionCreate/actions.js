@@ -1,4 +1,4 @@
-import { plus,newMess,addNewMess  } from "../type";
+import { plus,addNewMess,addNewError } from "../type";
 
 export function plusLike (){
     return{
@@ -6,15 +6,17 @@ export function plusLike (){
     }
 }
 
-export function newWrite(e){
+export function addError(text){
     return{
-        type:newMess,
-        payload:e.target.value
+        type:addNewError,
+        err:text
     }
 }
 
-export function addNewList(){
-    return{
-        type:addNewMess 
-    }
+export function addNewList(e){
+        return{
+            type:addNewMess,
+            payload:{newMess:e.target.value}
+        }
+    
 }

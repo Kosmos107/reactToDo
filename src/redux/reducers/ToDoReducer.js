@@ -1,24 +1,26 @@
-import {newMess,addNewMess} from "../type"
+import {addNewMess,addNewError} from "../type"
 
 const initState={
     list:[{mess:"24",data:new Date().toLocaleDateString()}],
-    newList:{mess:"",data:new Date().toLocaleDateString()}
+    error:false,
+    textError:"eee",
 }
 
 
 export const ToDoReducer=(state=initState,action)=>{
     console.log("ToDoReducer",state)
     switch(action.type){
-        case newMess:
+        case addNewMess:
             return{
                 ...state,
-                newList:{...state.newList,mess:action.payload}
+                list:[...state.list,{mess:action.payload.newMess,data:new Date().toLocaleDateString()}],
+                error:false
             }
-        case addNewMess:
-            debugger
+        case addNewError:{
             return{
-                ...state,list:[...state.list,state.newList],newList:{...state.newList,mess:""}
+                ...state,error:true,textError:action.err
             }
+        }
         default:return state
     }
 }

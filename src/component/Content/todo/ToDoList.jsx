@@ -3,7 +3,8 @@ import s from "./ToDo.module.scss"
 
 
 function ToDoList(props){
-    debugger
+
+    
     return(
         <label className={s.wrapper} >
             <input className={s.ListInput}  type="checkbox" />

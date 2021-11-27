@@ -10,10 +10,9 @@
 }
 .wrapperOrigin{
     max-width: 100%;
-    overflow-y:auto ;
-    margin: 30px auto;
-    min-height: 290px;
-    max-height: 290px;
+    margin: 30px auto ;
+    min-height: 320px;
+    max-height: 320px;
     overflow-y: scroll;
 }
 .text{
@@ -45,7 +44,7 @@
     font-size: 19px;
     border: 1px solid #899cd4;
     outline:none;
-    margin: 10% auto 3% ;
+    margin: 3% auto 3%;
     overflow-x: hidden;
     background-color: rgba($color: #ffffff, $alpha: 0.8);
     
@@ -61,4 +60,27 @@
    text-decoration: line-through ;
    background-color: rgba(26, 52, 133, 0.8);
    color:#899cd4;
+}
+
+.wrraperErr div{
+    font-size: 29px;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    transition: all .3s ease;
+    
+    
+}
+.yesError{
+  color: rgb(221, 5, 5);
+  transform: translateX(0);
+  visibility:visible;
+    opacity: 1;
+}
+.notError{
+    transform: translateX(-90%);
+    color: azure;
+    visibility: hidden;
+    opacity: 0;
+    
 }

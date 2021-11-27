@@ -2,23 +2,30 @@ import React from "react"
 import s from "./ToDo.module.scss"
 import ToDoList from "./ToDoList"
 import { connect } from "react-redux"
-import {newWrite,addNewList} from "../../../redux/actionCreate/actions"
+import {addNewList,addError} from "../../../redux/actionCreate/actions"
 const ToDo=(props)=>{
-
         const keyEnter = (e)=>{
             if(e.keyCode===13){
-                props.addList()
+                e.preventDefault()
+                props.addList(e)
+                e.target.value=""
             }
+        }
+        const a = s.yesError
+        const b = s.notError
+        const err=(t)=>{
+            if(t){return a }
+            else{return b}
         }
         return(
         <>
             <div  className={s.wrapperOrigin}>
                 {props.list.map((arr)=>{
-                    debugger
-                    return <ToDoList state={arr} />
+                    return <ToDoList key={arr.data} state={arr} />
                 })}
             </div>
-            <input value={props.newList.mess} onKeyDown={keyEnter} onChange={props.writeMess} className={s.textToDo} />
+            <div className={s.wrraperErr}><div className={err(props.error)}>{props.textError}</div></div>
+            <input  onKeyDown={keyEnter}  className={s.textToDo} />
         </>
         )
     }
@@ -32,11 +39,16 @@ const ToDo=(props)=>{
 
     const mapDiscpathToProps=(disp)=>{
         return {
-            writeMess:(e)=>{
-                return disp(newWrite(e))
-            },
-            addList:()=>{
-                return disp(addNewList())
+            addList:(e)=>{
+                if(e.target.value.length>20){   
+                    return disp(addError("слишком много символов"))
+                }
+                else if(e.target.value.trim()){
+                    return disp(addNewList(e))
+                }else {
+                    return disp(addError("введите текст"))
+                }
+                
             }
         }
     }

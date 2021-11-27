@@ -4,7 +4,7 @@ import Work from "./work/Work"
 import ToDo from "./todo/ToDo"
 import Metro from "./metro/Metro"
 import {Routes,Route} from "react-router-dom"
-
+import Thunk from "./thunk/Thunk"
 
 //делаем редюсер
 
@@ -41,6 +41,7 @@ class Content extends React.Component {
                 <Routes>
                     <Route path="/ToDo" element={<ToDo />} />
                     <Route path="/Work" element={<Work/>} />
+                    <Route path="/Thunk" element={<Thunk/>} />
                     <Route path="/Metro" element={
                         // рендер пропс
                     <Metro ren={RenderProp} />

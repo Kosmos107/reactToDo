@@ -35,7 +35,6 @@ const LoadBlock = (loading)=>(Block)=>{
 }
 //компонент для обработки
 const Block = ({to,children})=>{
-    debugger
     return(
         <h1 style={{marginBottom:to}}>{children}</h1>
     )

@@ -2,3 +2,6 @@
 export const newMess ="newMess"
 export const addNewMess = "addNewMess"
 export const addNewError ="addNewError"
+export const pullServer ="pullServer "
+export const beggin_load = "beggin_load"
+export const errData_load = "errData_load"

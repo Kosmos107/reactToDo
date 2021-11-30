@@ -19,10 +19,10 @@ export function addError(text){
     }
 }
 
-export function addNewList(e){
+export function addNewList(val){
         return{
             type:addNewMess,
-            payload:{newMess:e.target.value}
+            payload:{newMess:val}
         }
     
 }

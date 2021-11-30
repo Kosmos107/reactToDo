@@ -3,11 +3,13 @@ import s from "./ToDo.module.scss"
 import ToDoList from "./ToDoList"
 import { connect } from "react-redux"
 import {addNewList,addError} from "../../../redux/actionCreate/actions"
+
 const ToDo=(props)=>{
         const keyEnter = (e)=>{
             if(e.keyCode===13){
                 e.preventDefault()
-                props.addList(e)
+                let val = e.target.value
+                props.addList(val)
                 e.target.value=""
             }
         }
@@ -39,12 +41,12 @@ const ToDo=(props)=>{
 
     const mapDiscpathToProps=(disp)=>{
         return {
-            addList:(e)=>{
-                if(e.target.value.length>20){   
+            addList:(val)=>{
+                if(val.length>20){   
                     return disp(addError("слишком много символов"))
                 }
-                else if(e.target.value.trim()){
-                    return disp(addNewList(e))
+                else if(val.trim()){
+                    return disp(addNewList(val))
                 }else {
                     return disp(addError("введите текст"))
                 }

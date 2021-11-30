@@ -2,6 +2,7 @@ import axios from "axios"
 import {begginLoad,resultData,errData} from "../actionCreate/actions"
 
 
+
 export const pullAllDataServer=()=>{
 
     return dispatch=>{

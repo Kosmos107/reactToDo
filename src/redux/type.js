@@ -1,6 +1,7 @@
  export const plus = "plus"
 export const newMess ="newMess"
 export const addNewMess = "addNewMess"
+export const addNewList2 = "addNewList2"
 export const addNewError ="addNewError"
 export const pullServer ="pullServer "
 export const beggin_load = "beggin_load"

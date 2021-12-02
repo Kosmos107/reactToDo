@@ -26,6 +26,14 @@ export function addNewList(val){
         }
     
 }
+export function addNewList2(e){
+    console.log(e)
+    return{
+        type:addNewList2,
+        val:e
+    }
+
+}
 //thunk
 
 export function begginLoad(){
@@ -50,3 +58,4 @@ export function errData(err){
         load:false,
     }
 }
+

@@ -43,5 +43,9 @@ class Navbar extends React.Component{
     {
         id:4,
         name:"Thunk"
+    },
+    {
+        id:5,
+        name:"ToDo2"
     }
  ]

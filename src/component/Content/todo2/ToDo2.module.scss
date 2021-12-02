@@ -1,0 +1,86 @@
+.wrapper{
+    display: flex;
+    width: 70%;
+    margin: 0 auto 20px;
+    justify-content: center;
+    align-items: center;
+    
+    
+
+}
+.wrapperOrigin{
+    max-width: 100%;
+    margin: 30px auto ;
+    min-height: 320px;
+    max-height: 320px;
+    overflow-y: scroll;
+}
+.text{
+    width: 90%;
+    padding:15px 10px ;
+    font-size: 20px;
+    overflow-x: hidden;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fafbfc;
+    border: 2px solid #899cd4;
+    background-color: rgba(5, 43, 158, 0.3);
+    border-radius:20px ;
+    min-height: 20px;
+    transition: all .5s ease;
+    user-select:none;
+    text-transform: capitalize;
+    
+}
+.basic{
+    margin-right: 30px;
+}
+.textToDo{
+    
+    display: block;
+    max-width: 80%;
+    width: 100%;
+    padding: 20px 15px;
+    font-size: 19px;
+    border: 1px solid #899cd4;
+    outline:none;
+    margin: 3% auto 3%;
+    overflow-x: hidden;
+    background-color: rgba($color: #ffffff, $alpha: 0.8);
+    
+}
+.textToDo:focus{
+    background-color: rgba($color: #ffffff, $alpha: 1);
+}
+
+.ListInput{
+    display: none;
+}
+.ListInput:checked ~.text {
+   text-decoration: line-through ;
+   background-color: rgba(26, 52, 133, 0.8);
+   color:#899cd4;
+}
+
+.wrraperErr div{
+    font-size: 29px;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    transition: all .3s ease;
+    
+    
+}
+.yesError{
+  color: rgb(221, 5, 5);
+  transform: translateX(0);
+  visibility:visible;
+    opacity: 1;
+}
+.notError{
+    transform: translateX(-90%);
+    color: azure;
+    visibility: hidden;
+    opacity: 0;
+    
+}
